@@ -1,0 +1,31 @@
+<h1>Ajouter un produit !</h1>
+
+<div class="grid-item product-container col-title">
+
+    <form action="/api/nouveau_produit" method="post">
+        <label for="nom">Nom :</label>
+        <input type="text" name="nom" id="nom" required/>
+
+        <label for="prix">Prix :</label>
+        <input type="text" name="prix" id="prix" required/>
+
+
+        <label for="qty">Quantité :</label>
+        <input type="text" name="qty" id="qty" required/>
+
+
+        <label for="desc">Description :</label>
+        <textarea name="desc" id="desc" required></textarea>
+
+
+        <label for="lien_img">Lien de l'image :</label>
+        <input type="text" name="lien_img" id="lien_img" value="/img/produit/joce.jpg" required/>
+
+        <p><button class="button-85" role="button" type="submit">Ajouter ce produit</button></p>
+    </form>
+</div>
+
+<script>
+    // Change la page active sur la navbar
+    activeAjoutNavbar();
+</script>

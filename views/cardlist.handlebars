@@ -1,0 +1,45 @@
+<h1>Liste des Cartes</h1>
+{{#if cards}} 
+    <div class="grid-container">
+        {{#each cards}}
+            <div class="grid-item product-container col-title">
+                <a href="/detail_carte"><img class="product-img" onclick="postCarteID({{this.id}}, 'detail');" src="{{this.lien_img}}"></a>
+                    <h3>{{this.nom}}<span> | {{this.prix}}$ CAD</span></h3>
+
+                <div>
+                    <p>{{this.desc}}</p>
+
+                    <!--<p><a class="btn-store" role="button">Acheter</a></p>-->
+
+                    {{#ifCond this.qty 0}}
+                        <p class="small-text">Encore {{this.qty}} de disponible.</p>
+
+                        <p><a href="/detail_produit"><button class="button-85" role="button" onclick="postCarteID({{this.id}}, 'detail');">Détail</button></a></p>
+
+                       
+                        <!-- Utilise l'id pour différencier les produits -->
+                        <label for="qtyAchetee{{this.id}}">Entrez la quantité désirée</label>
+                        <input type="number" id="qtyAchetee{{this.id}}" name="qtyAchetee{{this.id}}" step="1" value="1" class="qtyAchetee" min="1" max="{{this.qty}}" oninput="blockBouton({{this.id}}, {{this.qty}});">
+                        
+                        <p><a href="/confirm_facture"><button id="btnAchat{{this.id}}" class="button-85" role="button" type="submit" onclick="postCarteID({{this.id}}, 'achat');">Acheter</button></a></p>
+                    {{else}}
+                        <p><a href="#"><button class="button-85" role="button">Détail</button></a></p>
+                        <p><button class="button-86" role="button" disabled>Rupture de stock</button></p>
+                    {{/ifCond}}
+                </div>
+                <hr>
+            </div>
+        {{/each}}
+    </div>
+
+{{else}}
+    <div class="grid-item product-container col-title">
+        <p>La liste de carte est introuvable.</p>
+    </div>
+{{/if}}
+
+
+<script>
+    // Change la page active sur la navbar
+    activeCardListNavbar();
+</script>

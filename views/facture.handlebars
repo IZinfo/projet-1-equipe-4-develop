@@ -1,0 +1,65 @@
+
+
+
+{{#if message_achat}} 
+ <div class="facture-container">
+    <h1>Erreur lors de l'achat.</h1>
+    <p>{{message_achat}}</p>
+ </div>
+{{else}}
+    {{#if facture}} 
+        <h1>Ma facture !</h1>
+
+        <div class="facture-container">
+            <h2 class="facture-title">Paiement réussi</h2>
+            <p>Votre paiement a été traité avec succès. Merci pour votre achat !</p>
+
+            <p>Produit : <strong>{{facture.nom}}</strong></p>
+
+            <p>No de facture : <strong>{{facture.no_facture}}</strong></p>
+
+            <p>Quantité acheté : <strong>{{facture.qty}}</strong></p>
+
+            <p>Montant payé : <strong>{{facture.prix}}$</strong></p>
+            
+
+            <p>Méthode de paiement : <strong>{{facture.methode}}</strong></p>
+
+            <p>Date et heure : <strong>{{facture.date}}</strong></p>
+
+            <p><a href="/"><button class="button-85" role="button">Retour</button></a></p>
+        </div>
+
+    {{else}}
+        {{#if detail_facture}}
+            <div class="facture-container">
+                <h2 class="facture-title">Détail de la facture</h2>
+
+                <p>Produit : <strong>{{detail_facture.nom}}</strong></p>
+
+                <p>No de facture : <strong>{{detail_facture.no_facture}}</strong></p>
+
+                <p>Quantité acheté : <strong>{{detail_facture.qty}}</strong></p>
+
+                <p>Montant payé : <strong>{{detail_facture.prix}}$</strong></p>
+                
+
+                <p>Méthode de paiement : <strong>{{detail_facture.methode}}</strong></p>
+
+                <p>Date et heure : <strong>{{detail_facture.date}}</strong></p>
+
+                <p><a href="/liste_achat"><button class="button-85" role="button">Retour</button></a></p>
+            </div>
+        {{else}}
+            <div class="grid-item product-container col-title">
+                    <p>Cette facture est introuvable.</p>
+            </div>
+        {{/if}}
+    {{/if}}
+{{/if}}
+
+
+<script>
+    // Change la page active sur la navbar
+    removeActiveNavbar();
+</script>

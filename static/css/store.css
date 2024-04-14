@@ -1,0 +1,322 @@
+/* ref : https://www.w3schools.com/css/tryit.asp?filename=trycss_grid */
+/* ref : https://stackoverflow.com/questions/35393429/how-to-get-current-screen-width-in-css */
+
+/*** MAIN ELEMENTS STORE ***/
+
+@media screen and (min-width: 1160px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+    }
+    .grid-item {
+        padding: 20px;
+        /*font-size: 30px;*/
+        text-align: center;
+    }
+}
+
+
+.col-title
+{
+    text-align: center;
+    /*background-color: rgb(14, 13, 13); */
+    padding: 2rem;
+}
+
+.product-container
+{
+    color: #ffffff;
+    border-radius: 1rem;
+    /*border: 0.2rem solid rgb(15, 15, 15);*/
+    /*background-color: rgba(19, 18, 18, 0.651); */
+    padding: 1rem;
+    margin: 2rem;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*** Image du magasin et élément de description ***/
+.product-img-detail
+{
+    /*position:static;*/
+    margin-left: auto;
+    margin-right: auto;
+    height: 15rem;
+    width: 15rem;
+    padding: 1rem;
+}
+
+.product-img
+{
+    /*position:static;*/
+    margin-left: auto;
+    margin-right: auto;
+    height: 15rem;
+    width: 15rem;
+    padding: 1rem;
+}
+
+.product-img:hover
+{
+    height: 16rem;
+    width: 16rem;
+    padding: 1rem;
+}
+
+
+hr 
+{ 
+    display: block;  /* diplay an horizontal bar */
+    /* width:50%; */
+    border-top: 2px solid #A9A9A9; 
+}
+
+
+.small-text 
+{
+    font-size: 0.9rem;
+}
+
+
+.bold-text 
+{
+    font-weight: bold;
+}
+
+
+
+
+/* La taille du form de qty */
+.qtyAchetee
+{
+    width: 5rem;
+}
+
+
+
+
+
+/* BUTTONS CSS */ 
+
+.btn-store
+{
+    border-radius: 1rem;
+    background-color: rgb(0, 0, 0);
+    border: 0.1rem solid rgb(55, 60, 62);
+    color: #ffffff; /* btn text color */
+    padding: 0.6rem;
+    margin: 0.5rem;
+    text-decoration: none;
+}
+
+.btn-store:hover
+{
+    background-color: rgb(24, 26, 27);
+    border: 0.1rem solid rgb(85, 92, 95);
+    color: #ffffff; /* btn text color */
+}
+
+.disabled
+{
+    background-color: rgb(12, 13, 14);
+    border: 0.1rem solid rgb(26, 28, 29);
+    border-radius: 1rem;
+    color: #ffffff; /* btn text color */
+}
+
+.disabled:hover
+{
+    background-color: rgb(12, 13, 14);
+    border: 0.1rem solid rgb(26, 28, 29);
+}
+
+.btn-bold
+{
+    color: #ffffff; /* btn text color */
+    font-size: 2rem;
+    /* font-weight: bold; */
+}
+
+
+
+
+
+
+
+/* BUTTON MULTI-COLOR */
+/* Ref : https://getcssscan.com/css-buttons-examples */
+
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+/* BTN DISABLED */
+/* Ref : https://getcssscan.com/css-buttons-examples */
+
+.button-86:disabled {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #3d3d3d;
+    cursor:default;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+
+.button-86:before:disabled {
+    content: "";
+
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+
+.button-86:after:disabled {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #4e4e4e;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**** FACTURE ****/
+.facture-container {
+    background-color: #302f2f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 10rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+.facture-title {
+    color: #4CAF50;
+}
+
+.facture-container p {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.facture-container button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.facture-container button:hover {
+    background-color: #45a049;
+}

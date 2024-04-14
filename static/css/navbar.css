@@ -1,0 +1,163 @@
+/*** NAVBAR ***/
+
+/* ref : https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_topnav_centered */
+/* ref : https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_topnav */
+
+
+#navbar {
+    color: aliceblue;
+    /*border: 0.2rem solid rgba(38, 40, 43, 0.8);*/
+    /*padding: 0.35rem;*/
+    height: 3rem;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    z-index: 1;
+    /*font-family:'Courier New', Courier, monospace;  /*THIS STYLE IS REALLY COOL ON THE NAVBAR */
+}
+
+#navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#navbar a:hover {
+    background-color: rgba(57, 59, 59, 0.8);
+    color: rgb(255, 255, 255);
+}
+
+#navbar a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+/* Ceci est le fa fa-bars, invisible si sur pc */
+#navbar .icon {
+    display: none;
+}
+
+
+
+
+/* Responsive navigation menu (for mobile devices) */
+
+@media screen and (max-width: 600px) {
+    #navbar a:not(:first-child) {display: none;}
+    #navbar a.icon {
+        float: right;
+        display: block;
+    }
+    #navbar.responsive {position: relative;}
+    #navbar.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    #navbar.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    #navbar a {
+        background-color: rgba(0, 0, 0);
+        color: rgb(255, 255, 255);
+    }
+    /* Ceci est le fa fa-bars, visible blanc sur mobile */
+    #navbar .icon {
+        color: #fff;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** DROPDOWN ***/
+
+/** Source : https://blog.logrocket.com/making-dropdown-menus-css/ **/
+.arrow 
+{
+    display: inline-block;
+    margin-left: 0.3rem;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+    transition: transform ease-in-out 0.3s;
+}
+
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown 
+{
+    position: relative;
+    display: inline-block;
+}
+
+
+
+/** Source : https://blog.logrocket.com/making-dropdown-menus-css/ **/
+.arrow 
+{
+    display: inline-block;
+    margin-left: 0.3rem;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+    transition: transform ease-in-out 0.3s;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content 
+{
+    display: none;
+    position: absolute;
+    background-color: rgb(36, 37, 37);
+    margin-top: 1.4rem;
+    min-width: 9rem;
+    box-shadow: 0rem 0.2rem 0.4rem 0rem rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a 
+{
+    color: aliceblue;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover 
+{
+    background-color: rgba(77, 82, 87, 0.8);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content 
+{
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .nav-link 
+{
+    background-color: rgba(36, 37, 37, 0.8);
+}

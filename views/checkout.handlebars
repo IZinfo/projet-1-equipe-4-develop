@@ -1,0 +1,33 @@
+<h1>Facturation et Paiement</h1>
+<div class="order-summary">
+    <h2>Récapitulatif de commande</h2>
+    <ul>
+        {{#each items}}
+        <li>{{this.name}} - ${{this.price}}</li>
+        {{/each}}
+    </ul>
+</div>
+
+<form action="/submit-payment" method="post">
+    <div class="payment-info">
+        <label for="card-name">Nom sur la carte:</label>
+        <input type="text" id="card-name" name="cardName" required>
+
+        <label for="card-number">Numéro de carte:</label>
+        <input type="text" id="card-number" name="cardNumber" required pattern="\d{16}">
+
+        <label for="exp-date">Date d'expiration (MM/AA):</label>
+        <input type="text" id="exp-date" name="expDate" required pattern="\d{2}/\d{2}">
+
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" required pattern="\d{3}">
+    </div>
+
+    <input type="submit" value="Payer">
+</form>
+
+
+<script>
+    // Change la page active sur la navbar
+    activeCheckoutNavbar();
+</script>

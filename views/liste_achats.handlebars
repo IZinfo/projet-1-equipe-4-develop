@@ -1,0 +1,41 @@
+<h1>Mes achats et factures !</h1>
+
+{{#if achats}} 
+
+    <table> 
+        <tr>
+            <th>Numéro de facture</th>
+            <th>Nom de la carte</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+        </tr>
+
+        {{#each achats}}
+            <tr>
+                <td><a href="/facture?no_facture={{this.no_facture}}">{{this.no_facture}}</a></td>
+                <td>{{this.nom}}</td>
+                <td>{{this.prix}}$</td>
+                <td>{{this.qty}}</td>
+            </tr>
+        {{/each}}
+        <!-- 
+         <tr>
+                <td class="bold">TOTAL :</td>
+                <td></td>
+                <td>{{this.prix}}$</td>
+                <td>{{this.qty}}</td>
+            </tr>
+             -->
+    </table>
+
+{{else}}
+   <div class="grid-item product-container col-title">
+        <p>La liste d'achat est vide.</p>
+    </div>
+{{/if}}
+
+
+<script>
+    // Change la page active sur la navbar
+    activeAchatNavbar();
+</script>
